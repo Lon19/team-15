@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:clic_sargent_game/values/strings.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,7 +25,7 @@ class LandingPage extends StatelessWidget{
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: new Text('ClicSargent Game'),
+        title: new Text(APP_NAME),
       ),
       body: SafeArea(
         child: Container(
