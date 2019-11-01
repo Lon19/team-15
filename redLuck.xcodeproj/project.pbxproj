@@ -16,6 +16,7 @@
 		B936BFCB236CD9E2008EB833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */; };
 		B936BFD6236CD9E2008EB833 /* redLuckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFD5236CD9E2008EB833 /* redLuckTests.swift */; };
 		B936BFE1236CD9E2008EB833 /* redLuckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFE0236CD9E2008EB833 /* redLuckUITests.swift */; };
+		B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFEE236CDCF3008EB833 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B936BFDC236CD9E2008EB833 /* redLuckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = redLuckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B936BFE0236CD9E2008EB833 /* redLuckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = redLuckUITests.swift; sourceTree = "<group>"; };
 		B936BFE2236CD9E2008EB833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B936BFEE236CDCF3008EB833 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		B936BFBA236CD9E0008EB833 /* redLuck */ = {
 			isa = PBXGroup;
 			children = (
+				B936BFF0236CDE79008EB833 /* Modal */,
 				B936BFBB236CD9E0008EB833 /* AppDelegate.swift */,
 				B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */,
 				B936BFBF236CD9E0008EB833 /* ViewController.swift */,
@@ -108,7 +111,6 @@
 				B936BFC7236CD9E2008EB833 /* Assets.xcassets */,
 				B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */,
 				B936BFCC236CD9E2008EB833 /* Info.plist */,
-				B936BFC4236CD9E0008EB833 /* redLuck.xcdatamodeld */,
 			);
 			path = redLuck;
 			sourceTree = "<group>";
@@ -129,6 +131,15 @@
 				B936BFE2236CD9E2008EB833 /* Info.plist */,
 			);
 			path = redLuckUITests;
+			sourceTree = "<group>";
+		};
+		B936BFF0236CDE79008EB833 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				B936BFC4236CD9E0008EB833 /* redLuck.xcdatamodeld */,
+				B936BFEE236CDCF3008EB833 /* CoreDataManager.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				B936BFC0236CD9E0008EB833 /* ViewController.swift in Sources */,
 				B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */,
 				B936BFC6236CD9E0008EB833 /* redLuck.xcdatamodeld in Sources */,
+				B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */,
 				B936BFBE236CD9E0008EB833 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
