@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFBB236CD9E0008EB833 /* AppDelegate.swift */; };
 		B936BFBE236CD9E0008EB833 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */; };
-		B936BFC0236CD9E0008EB833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFBF236CD9E0008EB833 /* ViewController.swift */; };
-		B936BFC3236CD9E0008EB833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B936BFC1236CD9E0008EB833 /* Main.storyboard */; };
+		B936BFC0236CD9E0008EB833 /* TradeCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFBF236CD9E0008EB833 /* TradeCardsViewController.swift */; };
 		B936BFC6236CD9E0008EB833 /* redLuck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B936BFC4236CD9E0008EB833 /* redLuck.xcdatamodeld */; };
 		B936BFC8236CD9E2008EB833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B936BFC7236CD9E2008EB833 /* Assets.xcassets */; };
 		B936BFCB236CD9E2008EB833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */; };
@@ -40,8 +39,7 @@
 		B936BFB8236CD9E0008EB833 /* redLuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = redLuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B936BFBB236CD9E0008EB833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B936BFBF236CD9E0008EB833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B936BFC2236CD9E0008EB833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B936BFBF236CD9E0008EB833 /* TradeCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardsViewController.swift; sourceTree = "<group>"; };
 		B936BFC5236CD9E0008EB833 /* redLuck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = redLuck.xcdatamodel; sourceTree = "<group>"; };
 		B936BFC7236CD9E2008EB833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B936BFCA236CD9E2008EB833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,11 +101,8 @@
 		B936BFBA236CD9E0008EB833 /* redLuck */ = {
 			isa = PBXGroup;
 			children = (
+				B936BFF1236CEC3D008EB833 /* ViewController */,
 				B936BFF0236CDE79008EB833 /* Modal */,
-				B936BFBB236CD9E0008EB833 /* AppDelegate.swift */,
-				B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */,
-				B936BFBF236CD9E0008EB833 /* ViewController.swift */,
-				B936BFC1236CD9E0008EB833 /* Main.storyboard */,
 				B936BFC7236CD9E2008EB833 /* Assets.xcassets */,
 				B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */,
 				B936BFCC236CD9E2008EB833 /* Info.plist */,
@@ -140,6 +135,16 @@
 				B936BFEE236CDCF3008EB833 /* CoreDataManager.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		B936BFF1236CEC3D008EB833 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B936BFBB236CD9E0008EB833 /* AppDelegate.swift */,
+				B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */,
+				B936BFBF236CD9E0008EB833 /* TradeCardsViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +253,6 @@
 			files = (
 				B936BFCB236CD9E2008EB833 /* LaunchScreen.storyboard in Resources */,
 				B936BFC8236CD9E2008EB833 /* Assets.xcassets in Resources */,
-				B936BFC3236CD9E0008EB833 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B936BFC0236CD9E0008EB833 /* ViewController.swift in Sources */,
+				B936BFC0236CD9E0008EB833 /* TradeCardsViewController.swift in Sources */,
 				B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */,
 				B936BFC6236CD9E0008EB833 /* redLuck.xcdatamodeld in Sources */,
 				B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */,
@@ -313,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B936BFC1236CD9E0008EB833 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B936BFC2236CD9E0008EB833 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

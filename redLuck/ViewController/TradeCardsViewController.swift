@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class TradeCardsViewController: UIViewController {
+	
+	override func loadView() {
+		view = UIView()
+		print("View loaded")
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
+		view.backgroundColor = .red
 	}
 
 
