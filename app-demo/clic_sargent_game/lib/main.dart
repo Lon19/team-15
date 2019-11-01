@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:clic_sargent_game/values/colours.dart';
 import 'package:clic_sargent_game/values/strings.dart';
+import 'package:clic_sargent_game/draw_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: LandingPage(),
     );
   }
@@ -29,7 +32,8 @@ class LandingPage extends StatelessWidget{
       ),
       body: SafeArea(
         child: Container(
-          color: Colors.white,
+          color: materialWhite,
+          child: Draw(),
         )
       ),
     );
