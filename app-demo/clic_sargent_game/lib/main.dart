@@ -11,19 +11,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: LandingPage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget{
+class LandingPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: new AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: new Text('ClicSargent Game'),
+      ),
       body: SafeArea(
         child: Container(
-
+          color: Colors.white,
         )
       ),
     );
