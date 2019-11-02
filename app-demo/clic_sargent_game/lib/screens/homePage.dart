@@ -1,3 +1,5 @@
+import 'package:clic_sargent_game/screens/gameScreenHandler.dart';
+import 'package:clic_sargent_game/screens/incomingChallenge.dart';
 import 'package:clic_sargent_game/utils/utilFunctions.dart';
 import 'package:clic_sargent_game/widgets/buttons.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,9 +32,9 @@ class HomePage extends StatelessWidget{
           ),
         ],
       ),
+
       body: StreamBuilder(
         stream: Firestore.instance.collection('users').snapshots(),
-        //print an integer every 2secs, 10 times
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return Text("Loading..");
@@ -49,10 +51,15 @@ class HomePage extends StatelessWidget{
   }
 
   Widget _buildList(BuildContext context, DocumentSnapshot document) {
-    void gamePlayRoute(){
+    void opponentPageRoute(){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Draw(getRandomWord(), currentUser.email, document['email'].toString())),
+        MaterialPageRoute(builder: (context) => Draw(getRandomWord(), currentUser.email, document['email'].toString())));
+    }
+    void incomingPageRoute(){
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => IncomingChallenge(document['email'].toString()))
       );
     }
 
@@ -61,7 +68,10 @@ class HomePage extends StatelessWidget{
         return ListTile(
           title: Text(document['name']),
           subtitle: Text(document['email']),
-          trailing: PrimaryButton('Play', gamePlayRoute),
+          trailing: Icon(Icons.keyboard_arrow_right),
+          onTap: () {
+            opponentPageRoute();
+          },
         );
       }
     }

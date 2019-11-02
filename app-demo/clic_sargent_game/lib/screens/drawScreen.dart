@@ -3,8 +3,10 @@ import 'dart:ui';
 
 import 'package:clic_sargent_game/values/colours.dart';
 import 'package:clic_sargent_game/values/strings.dart';
+import 'package:clic_sargent_game/widgets/buttons.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class Draw extends StatefulWidget {
@@ -53,21 +55,10 @@ class _DrawState extends State<Draw> {
       };
 
       Firestore.instance.collection('matches').add(matchData);
+      Navigator.pop(context);
     }
+
     return Scaffold(
-        appBar: new AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          title: new Text('Word: ' + widget.word),
-          actions: <Widget>[
-            new IconButton(icon: new Icon(Icons.send),
-              onPressed: (){
-                createNewMatch();
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -145,6 +136,21 @@ class _DrawState extends State<Draw> {
                         }),
                     visible: showBottomList,
                   ),
+                  Container(
+                    height: 50,
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Text(
+                              'Word: ' + widget.word,
+                              style: TextStyle(fontSize: 22)
+                          ),
+                          PrimaryButton('Send', createNewMatch),
+                        ],
+                      )
+                    )
+                  )
                 ],
               ),
             )),
