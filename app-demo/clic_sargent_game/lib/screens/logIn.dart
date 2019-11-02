@@ -1,3 +1,4 @@
+import 'package:clic_sargent_game/auth/authfunctions.dart';
 import 'package:flutter/material.dart';
 import 'package:clic_sargent_game/values/colours.dart';
 import 'package:clic_sargent_game/widgets/buttons.dart';
@@ -19,10 +20,11 @@ class _LogInState extends State<LogIn>{
   @override
   Widget build(BuildContext context) {
 
-    void logInWithEmail(){
+    void logInWithEmail() async{
       if(_formKeyLogIn.currentState.validate()){
         try {
-          FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+          FirebaseUser user = await signIn(_emailController.text, _passwordController.text);
+          Navigator.pop(context);
         } catch(e){
           _scaffoldKey.currentState
               .showSnackBar(SnackBar(content: Text('Invalid email or password')));

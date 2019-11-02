@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: LandingPage(),
+      home: _handleRedirection(),
     );
   }
 
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
         if (snapshot.hasData) {
           return HomePage();
         } else {
+          print(FirebaseAuth.instance.currentUser());
           return LandingPage();
         }
       },
