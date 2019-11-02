@@ -1,4 +1,3 @@
-import 'package:clic_sargent_game/screens/gamePlayView.dart';
 import 'package:clic_sargent_game/screens/logIn.dart';
 import 'package:clic_sargent_game/screens/signUp.dart';
 import 'package:clic_sargent_game/widgets/buttons.dart';

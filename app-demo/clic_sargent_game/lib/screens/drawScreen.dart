@@ -2,10 +2,16 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:clic_sargent_game/values/colours.dart';
+import 'package:clic_sargent_game/values/strings.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class Draw extends StatefulWidget {
+  final String word;
+  final String senderEmail;
+  final String receiverEmail;
+  Draw(this.word, this.senderEmail, this.receiverEmail);
   @override
   _DrawState createState() => _DrawState();
 }
@@ -28,7 +34,40 @@ class _DrawState extends State<Draw> {
   ];
   @override
   Widget build(BuildContext context) {
+
+    void createNewMatch(){
+      List xPoints = [];
+      List yPoints = [];
+      for (int i = 0; i < points.length - 1; i++) {
+        xPoints.add(points[i].points.dx);
+        yPoints.add(points[i].points.dy);
+      }
+
+      var matchData = {
+        "senderEmail": widget.senderEmail,
+        "receiverEmail": widget.receiverEmail,
+        "word": widget.word,
+        "status": "started",
+        "xPoints": xPoints,
+        "yPoints": yPoints
+      };
+
+      Firestore.instance.collection('matches').add(matchData);
+    }
     return Scaffold(
+        appBar: new AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: new Text('Word: ' + widget.word),
+          actions: <Widget>[
+            new IconButton(icon: new Icon(Icons.send),
+              onPressed: (){
+                createNewMatch();
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -110,43 +149,46 @@ class _DrawState extends State<Draw> {
               ),
             )),
       ),
-      body: GestureDetector(
-        onPanUpdate: (details) {
-          setState(() {
-            RenderBox renderBox = context.findRenderObject();
-            points.add(DrawingPoints(
-                points: renderBox.globalToLocal(details.globalPosition),
-                paint: Paint()
-                  ..strokeCap = strokeCap
-                  ..isAntiAlias = true
-                  ..color = selectedColor.withOpacity(opacity)
-                  ..strokeWidth = strokeWidth));
-          });
-        },
-        onPanStart: (details) {
-          setState(() {
-            RenderBox renderBox = context.findRenderObject();
-            points.add(DrawingPoints(
-                points: renderBox.globalToLocal(details.globalPosition),
-                paint: Paint()
-                  ..strokeCap = strokeCap
-                  ..isAntiAlias = true
-                  ..color = selectedColor.withOpacity(opacity)
-                  ..strokeWidth = strokeWidth));
-          });
-        },
-        onPanEnd: (details) {
-          setState(() {
-            points.add(null);
-          });
-        },
-        child: CustomPaint(
-          size: Size.infinite,
-          painter: DrawingPainter(
-            pointsList: points,
+      body: Container(
+            color: materialWhite,
+            child:       GestureDetector(
+              onPanUpdate: (details) {
+                setState(() {
+                  RenderBox renderBox = context.findRenderObject();
+                  points.add(DrawingPoints(
+                      points: renderBox.globalToLocal(details.globalPosition),
+                      paint: Paint()
+                        ..strokeCap = strokeCap
+                        ..isAntiAlias = true
+                        ..color = selectedColor.withOpacity(opacity)
+                        ..strokeWidth = strokeWidth));
+                });
+              },
+              onPanStart: (details) {
+                setState(() {
+                  RenderBox renderBox = context.findRenderObject();
+                  points.add(DrawingPoints(
+                      points: renderBox.globalToLocal(details.globalPosition),
+                      paint: Paint()
+                        ..strokeCap = strokeCap
+                        ..isAntiAlias = true
+                        ..color = selectedColor.withOpacity(opacity)
+                        ..strokeWidth = strokeWidth));
+                });
+              },
+              onPanEnd: (details) {
+                setState(() {
+                  points.add(null);
+                });
+              },
+              child: CustomPaint(
+                size: Size.infinite,
+                painter: DrawingPainter(
+                  pointsList: points,
+                ),
+              ),
+            ),
           ),
-        ),
-      ),
     );
   }
 

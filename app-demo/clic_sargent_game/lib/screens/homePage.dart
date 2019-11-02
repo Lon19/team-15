@@ -1,4 +1,4 @@
-import 'package:clic_sargent_game/screens/gamePlayView.dart';
+import 'package:clic_sargent_game/utils/utilFunctions.dart';
 import 'package:clic_sargent_game/widgets/buttons.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget{
     void gamePlayRoute(){
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => GamePlayView('Sun', 'dabkechinmay@gmail.co', 'dabkechinmay@gmail.com')),
+        MaterialPageRoute(builder: (context) => Draw(getRandomWord(), currentUser.email, document['email'].toString())),
       );
     }
 
