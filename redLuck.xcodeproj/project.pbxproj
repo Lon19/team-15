@@ -16,6 +16,9 @@
 		B936BFD6236CD9E2008EB833 /* redLuckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFD5236CD9E2008EB833 /* redLuckTests.swift */; };
 		B936BFE1236CD9E2008EB833 /* redLuckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFE0236CD9E2008EB833 /* redLuckUITests.swift */; };
 		B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFEE236CDCF3008EB833 /* CoreDataManager.swift */; };
+		B936BFF3236CFC15008EB833 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFF2236CFC15008EB833 /* TabBarController.swift */; };
+		B936BFF7236CFD17008EB833 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFF6236CFD17008EB833 /* Settings.swift */; };
+		B936BFF9236CFE4D008EB833 /* TradeCardsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFF8236CFE4D008EB833 /* TradeCardsTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		B936BFE0236CD9E2008EB833 /* redLuckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = redLuckUITests.swift; sourceTree = "<group>"; };
 		B936BFE2236CD9E2008EB833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B936BFEE236CDCF3008EB833 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B936BFF2236CFC15008EB833 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B936BFF6236CFD17008EB833 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B936BFF8236CFE4D008EB833 /* TradeCardsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardsTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +107,9 @@
 		B936BFBA236CD9E0008EB833 /* redLuck */ = {
 			isa = PBXGroup;
 			children = (
-				B936BFF1236CEC3D008EB833 /* ViewController */,
+				B936BFFA236D0251008EB833 /* View */,
+				B936BFF5236CFD0C008EB833 /* General */,
+				B936BFF1236CEC3D008EB833 /* VC */,
 				B936BFF0236CDE79008EB833 /* Modal */,
 				B936BFC7236CD9E2008EB833 /* Assets.xcassets */,
 				B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */,
@@ -137,14 +145,39 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		B936BFF1236CEC3D008EB833 /* ViewController */ = {
+		B936BFF1236CEC3D008EB833 /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				B936BFBB236CD9E0008EB833 /* AppDelegate.swift */,
 				B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */,
-				B936BFBF236CD9E0008EB833 /* TradeCardsViewController.swift */,
+				B936BFF2236CFC15008EB833 /* TabBarController.swift */,
+				B936BFF4236CFC1D008EB833 /* TradeCardsVCs */,
 			);
-			path = ViewController;
+			path = VC;
+			sourceTree = "<group>";
+		};
+		B936BFF4236CFC1D008EB833 /* TradeCardsVCs */ = {
+			isa = PBXGroup;
+			children = (
+				B936BFBF236CD9E0008EB833 /* TradeCardsViewController.swift */,
+				B936BFF8236CFE4D008EB833 /* TradeCardsTableVC.swift */,
+			);
+			path = TradeCardsVCs;
+			sourceTree = "<group>";
+		};
+		B936BFF5236CFD0C008EB833 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B936BFF6236CFD17008EB833 /* Settings.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		B936BFFA236D0251008EB833 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,9 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B936BFF9236CFE4D008EB833 /* TradeCardsTableVC.swift in Sources */,
 				B936BFC0236CD9E0008EB833 /* TradeCardsViewController.swift in Sources */,
 				B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */,
 				B936BFC6236CD9E0008EB833 /* redLuck.xcdatamodeld in Sources */,
+				B936BFF3236CFC15008EB833 /* TabBarController.swift in Sources */,
+				B936BFF7236CFD17008EB833 /* Settings.swift in Sources */,
 				B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */,
 				B936BFBE236CD9E0008EB833 /* SceneDelegate.swift in Sources */,
 			);
@@ -449,6 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XANC98W5GA;
 				INFOPLIST_FILE = redLuck/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XANC98W5GA;
 				INFOPLIST_FILE = redLuck/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

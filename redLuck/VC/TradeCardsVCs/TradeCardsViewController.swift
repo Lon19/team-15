@@ -10,17 +10,26 @@ import UIKit
 
 class TradeCardsViewController: UIViewController {
 	
+	var tradeCardsTableView: UITableView!
+	
 	override func loadView() {
 		view = UIView()
-		print("View loaded")
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		view.backgroundColor = .red
+		view.backgroundColor = themeColor
+		
+		addAndSetupTable()
 	}
 
 
 }
 
+extension TradeCardsViewController {
+	
+	fileprivate func addAndSetupTable() {
+		tradeCardsTableView = UITableView()
+	}
+}
