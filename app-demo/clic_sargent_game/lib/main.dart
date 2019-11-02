@@ -1,8 +1,12 @@
+import 'package:clic_sargent_game/screens/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:clic_sargent_game/values/colours.dart';
 import 'package:clic_sargent_game/values/strings.dart';
 import 'package:clic_sargent_game/screens/drawScreen.dart';
 import 'package:clic_sargent_game/screens/landingPage.dart';
+
+//Firebase
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,6 +21,19 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: LandingPage(),
+    );
+  }
+
+  Widget _handleRedirection(){
+    return StreamBuilder<FirebaseUser>(
+      stream: FirebaseAuth.instance.onAuthStateChanged,
+      builder: (BuildContext context, snapshot) {
+        if (snapshot.hasData) {
+          return HomePage();
+        } else {
+          return LandingPage();
+        }
+      },
     );
   }
 }
