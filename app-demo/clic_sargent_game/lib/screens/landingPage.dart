@@ -36,7 +36,7 @@ class LandingPage extends StatelessWidget{
                 flex: 80,
                 child: Center(
                   child: Text(
-                    'ClicSargent Game',
+                    'CLIC Sargent Game',
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35),
                   ),
                 )

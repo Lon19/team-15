@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         if (snapshot.hasData) {
           return HomePage();
         } else {
-          print(FirebaseAuth.instance.currentUser());
           return LandingPage();
         }
       },
