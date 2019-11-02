@@ -8,13 +8,11 @@
 
 import UIKit
 
-class TradeCardsViewController: UIViewController {
+class TradeCardsTableViewController: UITableViewController {
 	
 	let tradeCardsTableViewCellID = "trade cards table view cell ID"
 	var isTraded = [false, false, false, false, false, false, false, false, false, false]
 	let names = ["Lady Gaga", "John Conner", "Sarah Conner", "Boris Johnson", "David Cameron", "Donald Trump", "Theresa May", "Hilary Clinton", "John Berclow", "Jeremy Corbyn"]
-	
-	var tradeCardsTableView: UITableView!
 	
 	override func loadView() {
 		view = UIView()
@@ -28,37 +26,23 @@ class TradeCardsViewController: UIViewController {
 		setUpNavBar()
 		addAndSetupTable()
 	}
-
-	override func viewWillLayoutSubviews() {
-		super.viewWillLayoutSubviews()
-		
-		tradeCardsTableView.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			tradeCardsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: marginLength),
-			tradeCardsTableView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-			tradeCardsTableView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-			tradeCardsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-			])
-	}
 }
 
-extension TradeCardsViewController {
+extension TradeCardsTableViewController {
 	
 	fileprivate func setUpNavBar() {
 		navigationItem.title = "Trade!"
 	}
 	
 	fileprivate func addAndSetupTable() {
-		tradeCardsTableView = UITableView()
-		view.addSubview(tradeCardsTableView)
+		tableView = UITableView()
 		
-		tradeCardsTableView.backgroundColor 		= backgroundColor
-		tradeCardsTableView.keyboardDismissMode 	= .onDrag
-		tradeCardsTableView.rowHeight 				= 120
-		tradeCardsTableView.tableFooterView			= UIView()
+		tableView.backgroundColor 		= backgroundColor
+		tableView.keyboardDismissMode 	= .onDrag
+		tableView.rowHeight 			= 120
+		tableView.tableFooterView		= UIView()
+		tableView.allowsSelection		= false
 		
-		tradeCardsTableView.dataSource = self
-		tradeCardsTableView.delegate = self
-		tradeCardsTableView.register(TradeCardsTableViewCell.self, forCellReuseIdentifier: tradeCardsTableViewCellID)
+		tableView.register(TradeCardsTableViewCell.self, forCellReuseIdentifier: tradeCardsTableViewCellID)
 	}
 }

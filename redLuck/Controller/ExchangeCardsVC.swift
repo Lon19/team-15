@@ -71,7 +71,7 @@ extension ExchangeCardsViewController {
 extension ExchangeCardsViewController {
 	
 	@objc func startExchanging(_ button: UIButton) {
-		navigationController?.pushViewController(TradeCardsViewController(), animated: true)
+		navigationController?.pushViewController(TradeCardsTableViewController(), animated: true)
 	}
 	
 	@objc func startActivity(_ button: UIButton) {

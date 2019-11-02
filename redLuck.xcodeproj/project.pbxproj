@@ -29,6 +29,7 @@
 		B936C00C236D2FAD008EB833 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00B236D2FAD008EB833 /* UIImageExtension.swift */; };
 		B936C00E236D3A5F008EB833 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00D236D3A5F008EB833 /* DummyVC.swift */; };
 		B936C010236D3F7D008EB833 /* ExchangeCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00F236D3F7D008EB833 /* ExchangeCardsVC.swift */; };
+		B936C016236D65F5008EB833 /* TradeCardSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C015236D65F5008EB833 /* TradeCardSearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		B936C00B236D2FAD008EB833 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		B936C00D236D3A5F008EB833 /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
 		B936C00F236D3F7D008EB833 /* ExchangeCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCardsVC.swift; sourceTree = "<group>"; };
+		B936C015236D65F5008EB833 /* TradeCardSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			children = (
 				B936BFBF236CD9E0008EB833 /* TradeCardsViewController.swift */,
 				B936BFF8236CFE4D008EB833 /* TradeCardsTableVC.swift */,
+				B936C015236D65F5008EB833 /* TradeCardSearchController.swift */,
 			);
 			path = TradeCardsVCs;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */,
 				B936C006236D0802008EB833 /* TextView.swift in Sources */,
 				B936C004236D07F6008EB833 /* TextField.swift in Sources */,
+				B936C016236D65F5008EB833 /* TradeCardSearchController.swift in Sources */,
 				B936BFC6236CD9E0008EB833 /* redLuck.xcdatamodeld in Sources */,
 				B936C008236D1A0C008EB833 /* TradeCardsNavigationController.swift in Sources */,
 				B936BFF3236CFC15008EB833 /* TabBarController.swift in Sources */,

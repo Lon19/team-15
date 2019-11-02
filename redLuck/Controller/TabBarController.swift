@@ -27,6 +27,10 @@ class TabBarController: UITabBarController {
 		let card = UIImage(imageLiteralResourceName: "card").resizeImage(targetSize: CGSize(width: 50, height: 50))
 		let tabBarItemForCard = UITabBarItem(title: nil, image: cardGrey, selectedImage: card.withRenderingMode(.alwaysOriginal))
 		
+		let chatGrey = UIImage(imageLiteralResourceName: "chatGrey").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let chat = UIImage(imageLiteralResourceName: "chat").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let tabBarItemForChat = UITabBarItem(title: nil, image: chatGrey, selectedImage: chat.withRenderingMode(.alwaysOriginal))
+		
 		let profileGrey = UIImage(imageLiteralResourceName: "profileGrey").resizeImage(targetSize: CGSize(width: 50, height: 50))
 		let profile = UIImage(imageLiteralResourceName: "profile").resizeImage(targetSize: CGSize(width: 50, height: 50))
 		let tabBarItemForProfile = UITabBarItem(title: nil, image: profileGrey, selectedImage: profile.withRenderingMode(.alwaysOriginal))
@@ -35,12 +39,14 @@ class TabBarController: UITabBarController {
 		viewControllers![0].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
 		viewControllers![1].tabBarItem = tabBarItemForCard
 		viewControllers![1].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+		viewControllers![2].tabBarItem = tabBarItemForChat
+		viewControllers![2].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
 		viewControllers![3].tabBarItem = tabBarItemForProfile
 		viewControllers![3].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
 		
 		// customize tab bar
 		tabBar.tintColor = themeColor
-		tabBar.barTintColor = barTintColor
+		tabBar.barTintColor = .white
 	}
 }
 

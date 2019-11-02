@@ -8,17 +8,17 @@
 
 import UIKit
 
-extension TradeCardsViewController: UITableViewDataSource {
+extension TradeCardsTableViewController {
 	
-	func numberOfSections(in tableView: UITableView) -> Int {
+	override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return isTraded.count
 	}
 	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: tradeCardsTableViewCellID, for: indexPath) as! TradeCardsTableViewCell
 		
 		cell.tableVC = self
@@ -39,7 +39,4 @@ extension TradeCardsViewController: UITableViewDataSource {
 	}
 }
 
-extension TradeCardsViewController: UITableViewDelegate {
-	
-	
-}
+
