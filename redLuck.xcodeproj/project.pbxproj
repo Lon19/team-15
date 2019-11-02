@@ -19,6 +19,14 @@
 		B936BFF3236CFC15008EB833 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFF2236CFC15008EB833 /* TabBarController.swift */; };
 		B936BFF7236CFD17008EB833 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFF6236CFD17008EB833 /* Settings.swift */; };
 		B936BFF9236CFE4D008EB833 /* TradeCardsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFF8236CFE4D008EB833 /* TradeCardsTableVC.swift */; };
+		B936BFFD236D0449008EB833 /* TradeCardsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFFC236D0449008EB833 /* TradeCardsTableViewCell.swift */; };
+		B936C000236D079B008EB833 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936BFFF236D079B008EB833 /* Label.swift */; };
+		B936C002236D07C2008EB833 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C001236D07C2008EB833 /* Button.swift */; };
+		B936C004236D07F6008EB833 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C003236D07F6008EB833 /* TextField.swift */; };
+		B936C006236D0802008EB833 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C005236D0802008EB833 /* TextView.swift */; };
+		B936C008236D1A0C008EB833 /* TradeCardsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C007236D1A0C008EB833 /* TradeCardsNavigationController.swift */; };
+		B936C00A236D1C59008EB833 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C009236D1C59008EB833 /* Font.swift */; };
+		B936C00C236D2FAD008EB833 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00B236D2FAD008EB833 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +65,14 @@
 		B936BFF2236CFC15008EB833 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B936BFF6236CFD17008EB833 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B936BFF8236CFE4D008EB833 /* TradeCardsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardsTableVC.swift; sourceTree = "<group>"; };
+		B936BFFC236D0449008EB833 /* TradeCardsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardsTableViewCell.swift; sourceTree = "<group>"; };
+		B936BFFF236D079B008EB833 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		B936C001236D07C2008EB833 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		B936C003236D07F6008EB833 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		B936C005236D0802008EB833 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		B936C007236D1A0C008EB833 /* TradeCardsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardsNavigationController.swift; sourceTree = "<group>"; };
+		B936C009236D1C59008EB833 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		B936C00B236D2FAD008EB833 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +123,9 @@
 		B936BFBA236CD9E0008EB833 /* redLuck */ = {
 			isa = PBXGroup;
 			children = (
-				B936BFFA236D0251008EB833 /* View */,
 				B936BFF5236CFD0C008EB833 /* General */,
-				B936BFF1236CEC3D008EB833 /* VC */,
+				B936BFF1236CEC3D008EB833 /* Controller */,
+				B936BFFA236D0251008EB833 /* View */,
 				B936BFF0236CDE79008EB833 /* Modal */,
 				B936BFC7236CD9E2008EB833 /* Assets.xcassets */,
 				B936BFC9236CD9E2008EB833 /* LaunchScreen.storyboard */,
@@ -145,15 +161,16 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		B936BFF1236CEC3D008EB833 /* VC */ = {
+		B936BFF1236CEC3D008EB833 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B936BFBB236CD9E0008EB833 /* AppDelegate.swift */,
 				B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */,
 				B936BFF2236CFC15008EB833 /* TabBarController.swift */,
+				B936C007236D1A0C008EB833 /* TradeCardsNavigationController.swift */,
 				B936BFF4236CFC1D008EB833 /* TradeCardsVCs */,
 			);
-			path = VC;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B936BFF4236CFC1D008EB833 /* TradeCardsVCs */ = {
@@ -169,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				B936BFF6236CFD17008EB833 /* Settings.swift */,
+				B936C009236D1C59008EB833 /* Font.swift */,
+				B936C00B236D2FAD008EB833 /* UIImageExtension.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -176,8 +195,29 @@
 		B936BFFA236D0251008EB833 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B936BFFE236D0789008EB833 /* ReusableViews */,
+				B936BFFB236D0428008EB833 /* TradeCardsViews */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B936BFFB236D0428008EB833 /* TradeCardsViews */ = {
+			isa = PBXGroup;
+			children = (
+				B936BFFC236D0449008EB833 /* TradeCardsTableViewCell.swift */,
+			);
+			path = TradeCardsViews;
+			sourceTree = "<group>";
+		};
+		B936BFFE236D0789008EB833 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				B936BFFF236D079B008EB833 /* Label.swift */,
+				B936C001236D07C2008EB833 /* Button.swift */,
+				B936C003236D07F6008EB833 /* TextField.swift */,
+				B936C005236D0802008EB833 /* TextView.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,12 +352,20 @@
 			files = (
 				B936BFF9236CFE4D008EB833 /* TradeCardsTableVC.swift in Sources */,
 				B936BFC0236CD9E0008EB833 /* TradeCardsViewController.swift in Sources */,
+				B936C00A236D1C59008EB833 /* Font.swift in Sources */,
 				B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */,
+				B936C006236D0802008EB833 /* TextView.swift in Sources */,
+				B936C004236D07F6008EB833 /* TextField.swift in Sources */,
 				B936BFC6236CD9E0008EB833 /* redLuck.xcdatamodeld in Sources */,
+				B936C008236D1A0C008EB833 /* TradeCardsNavigationController.swift in Sources */,
 				B936BFF3236CFC15008EB833 /* TabBarController.swift in Sources */,
+				B936C000236D079B008EB833 /* Label.swift in Sources */,
 				B936BFF7236CFD17008EB833 /* Settings.swift in Sources */,
+				B936BFFD236D0449008EB833 /* TradeCardsTableViewCell.swift in Sources */,
 				B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */,
 				B936BFBE236CD9E0008EB833 /* SceneDelegate.swift in Sources */,
+				B936C002236D07C2008EB833 /* Button.swift in Sources */,
+				B936C00C236D2FAD008EB833 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

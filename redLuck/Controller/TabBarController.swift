@@ -14,7 +14,7 @@ class TabBarController: UITabBarController {
 		super.viewDidLoad()
 		
 		viewControllers = [UIViewController(),
-						   TradeCardsViewController(),
+						   TradeCardsNavigationController(),
 						   UIViewController()
 		]
 		
@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
 		
 		// customize tab bar
 		tabBar.tintColor = themeColor
-		tabBar.barTintColor = .black
+		tabBar.barTintColor = barTintColor
 		
 		// others
 		delegate = self

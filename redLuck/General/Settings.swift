@@ -8,4 +8,10 @@
 
 import UIKit
 
-let themeColor = UIColor.yellow
+let backgroundColor = UIColor.white
+let themeColor = UIColor(red: 73/255, green: 183/255, blue: 227/255, alpha: 1)
+let fontColor = UIColor.black
+let barTintColor = UIColor.black
+
+let marginLength: CGFloat = 10
+let fontSize: CGFloat = 15
