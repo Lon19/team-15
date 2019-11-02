@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "403253031834",
+    "firebase_url": "https://jpm-clicsargent-game.firebaseio.com",
+    "project_id": "jpm-clicsargent-game",
+    "storage_bucket": "jpm-clicsargent-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403253031834:android:e1afc9ee7e7303fcbe8023",
+        "android_client_info": {
+          "package_name": "com.jpmcodeforgood.clic_sargent_game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403253031834-te77ks7vvqe2r4d3iostf3a1pmlem45n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1I8U_hV7FyhAbgt_QVtkKyTrPBNLA4Mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403253031834-te77ks7vvqe2r4d3iostf3a1pmlem45n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
