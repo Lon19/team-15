@@ -1,5 +1,6 @@
 import 'package:clic_sargent_game/screens/gamePlayView.dart';
 import 'package:clic_sargent_game/widgets/buttons.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:clic_sargent_game/values/strings.dart';
@@ -8,8 +9,15 @@ import 'package:clic_sargent_game/screens/drawScreen.dart';
 
 
 class HomePage extends StatelessWidget{
+
+  FirebaseUser currentUser;
+
+  void getUser() async {
+    currentUser = await FirebaseAuth.instance.currentUser();
+  }
   @override
   Widget build(BuildContext context) {
+    getUser();
     // TODO: implement build
     return Scaffold(
       appBar: new AppBar(
@@ -22,10 +30,43 @@ class HomePage extends StatelessWidget{
           ),
         ],
       ),
-      body: SafeArea(
-          child: Container(
-          )
+      body: StreamBuilder(
+        stream: Firestore.instance.collection('users').snapshots(),
+        //print an integer every 2secs, 10 times
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Text("Loading..");
+          }
+          return ListView.builder(
+            itemCount: snapshot.data.documents.length,
+            itemBuilder: (context, index) {
+              return _buildList(context, snapshot.data.documents[index]);
+            },
+          );
+        },
       ),
     );
+  }
+
+  Widget _buildList(BuildContext context, DocumentSnapshot document) {
+    void gamePlayRoute(){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => GamePlayView('Sun', 'dabkechinmay@gmail.co', 'dabkechinmay@gmail.com')),
+      );
+    }
+
+    if(currentUser!=null){
+      if(document['email']!=currentUser.email){
+        return ListTile(
+          title: Text(document['name']),
+          subtitle: Text(document['email']),
+          trailing: PrimaryButton('Play', gamePlayRoute),
+        );
+      }
+    }
+    else {
+      return Container();
+    }
   }
 }

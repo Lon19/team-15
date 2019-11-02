@@ -6,9 +6,13 @@ import 'package:flutter/material.dart';
 import 'drawScreen.dart';
 
 class GamePlayView extends StatelessWidget{
+  final String word;
+  final String senderEmail;
+  final String receiverEmail;
+  GamePlayView(this.word, this.senderEmail, this.receiverEmail);
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by

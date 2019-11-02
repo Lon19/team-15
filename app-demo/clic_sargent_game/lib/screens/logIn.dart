@@ -38,61 +38,49 @@ class _LogInState extends State<LogIn>{
         title: new Text('Log In'),
       ),
       body: SafeArea(
-          child: Container(
-              child: Column(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          color: materialWhite,
+          child: Form(
+              key: _formKeyLogIn,
+              child: ListView(
                 children: <Widget>[
-                  Flexible(
-                      flex: 10,
-                      child: Container(color: materialWhite,)
+                  TextFormField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                        labelText: 'Email'
+                    ),
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                      return null;
+                    },
                   ),
-                  Flexible(
-                      flex: 90,
-                      child: Container(
-                        padding: EdgeInsets.all(20),
-                        color: materialWhite,
-                        child: Form(
-                            key: _formKeyLogIn,
-                            child: Column(
-                              children: <Widget>[
-                                TextFormField(
-                                  controller: _emailController,
-                                  decoration: InputDecoration(
-                                      hintText: 'Email'
-                                  ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Please enter your email';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                Container(height: 30),
-                                TextFormField(
-                                  controller: _passwordController,
-                                  decoration: InputDecoration(
-                                      hintText: 'Password'
-                                  ),
-                                  validator: (value) {
-                                    if (value.isEmpty) {
-                                      return 'Please enter your password';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                Container(height: 50),
-                                Container(
-                                  alignment: Alignment.topRight,
-                                  color: materialWhite,
-                                  child: PrimaryButton('Log In', logInWithEmail),
-                                )
-                              ],
-                            )// Build this out in the next steps.
-                        )
-                      )
+                  Container(height: 30),
+                  TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                    ),
+                    obscureText: true,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                      return null;
+                    },
                   ),
+                  Container(height: 50),
+                  Container(
+                    alignment: Alignment.topRight,
+                    color: materialWhite,
+                    child: PrimaryButton('Log In', logInWithEmail),
+                  )
                 ],
-              )
+              )// Build this out in the next steps.
           )
+        )
       ),
     );
   }

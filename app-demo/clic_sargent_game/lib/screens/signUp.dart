@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:clic_sargent_game/values/colours.dart';
 import 'package:clic_sargent_game/widgets/buttons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 
 
 class SignUp extends StatefulWidget{
@@ -28,8 +29,20 @@ class _SignUpState extends State<SignUp>{
           addUserToDB(_emailController.text, _fullNameController.text, user.uid);
           Navigator.pop(context);
         } catch(e){
-          _scaffoldKey.currentState
-              .showSnackBar(SnackBar(content: Text('Invalid email or password')));
+          PlatformException exception = e;
+          print(exception.code);
+          if(exception.code=="ERROR_INVALID_EMAIL"){
+            _scaffoldKey.currentState
+                .showSnackBar(SnackBar(content: Text('Invalid email')));
+          }
+          else if(exception.code=="ERROR_EMAIL_ALREADY_IN_USE"){
+            _scaffoldKey.currentState
+                .showSnackBar(SnackBar(content: Text('Email already in use')));
+          }
+          else if(exception.code=="ERROR_WEAK_PASSWORD"){
+            _scaffoldKey.currentState
+                .showSnackBar(SnackBar(content: Text('Weak password')));
+          }
         }
       }
     }
@@ -40,74 +53,63 @@ class _SignUpState extends State<SignUp>{
         title: new Text('Sign Up'),
       ),
       body: SafeArea(
-          child: Container(
-              child: Column(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          color: materialWhite,
+          child: Form(
+              key: _formKeySignUp,
+              child: ListView(
                 children: <Widget>[
-                  Flexible(
-                      flex: 10,
-                      child: Container(color: materialWhite,)
+                  TextFormField(
+                    controller: _fullNameController,
+                    decoration: InputDecoration(
+                        labelText: 'Full name'
+                    ),
+                    textCapitalization: TextCapitalization.sentences,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your full name';
+                      }
+                      return null;
+                    },
                   ),
-                  Flexible(
-                      flex: 90,
-                      child: Container(
-                          padding: EdgeInsets.all(20),
-                          color: materialWhite,
-                          child: Form(
-                              key: _formKeySignUp,
-                              child: Column(
-                                children: <Widget>[
-                                  TextFormField(
-                                    controller: _fullNameController,
-                                    decoration: InputDecoration(
-                                        hintText: 'Full name'
-                                    ),
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Please enter your full name';
-                                      }
-                                      return null;
-                                    },
-                                  ),
-                                  Container(height: 30),
-                                  TextFormField(
-                                    controller: _emailController,
-                                    decoration: InputDecoration(
-                                        hintText: 'Email'
-                                    ),
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Please enter your email';
-                                      }
-                                      return null;
-                                    },
-                                  ),
-                                  Container(height: 30),
-                                  TextFormField(
-                                    controller: _passwordController,
-                                    decoration: InputDecoration(
-                                        hintText: 'Password'
-                                    ),
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return 'Please enter your password';
-                                      }
-                                      return null;
-                                    },
-                                  ),
-                                  Container(height: 50),
-                                  Container(
-                                    alignment: Alignment.topRight,
-                                    color: materialWhite,
-                                    child: PrimaryButton('Sign Up', signUpWithEmail),
-                                  )
-                                ],
-                              )// Build this out in the next steps.
-                          )
-                      )
+                  Container(height: 30),
+                  TextFormField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                        labelText: 'Email'
+                    ),
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your email';
+                      }
+                      return null;
+                    },
                   ),
+                  Container(height: 30),
+                  TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                      labelText: 'Password'
+                    ),
+                    obscureText: true,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Please enter your password';
+                      }
+                      return null;
+                    },
+                  ),
+                  Container(height: 50),
+                  Container(
+                    alignment: Alignment.topRight,
+                    color: materialWhite,
+                    child: PrimaryButton('Sign Up', signUpWithEmail),
+                  )
                 ],
               )
           )
+        )
       ),
     );
   }

@@ -23,3 +23,8 @@ void addUserToDB(String email, String fullName, String uID){
   print("userID: " + uID);
   Firestore.instance.collection('users').document(uID).setData(newUser);
 }
+
+Future<String> getCurrentUserEmail() async {
+  FirebaseUser currentUser = await FirebaseAuth.instance.currentUser();
+  return currentUser.email;
+}
