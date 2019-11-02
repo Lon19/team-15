@@ -13,26 +13,34 @@ class TabBarController: UITabBarController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		viewControllers = [UIViewController(),
+		viewControllers = [DummyViewController(),
 						   TradeCardsNavigationController(),
-						   UIViewController()
+						   DummyViewController(),
+						   DummyViewController()
 		]
 		
-		for tabBarItem in tabBar.items! {
-			tabBarItem.title = "This"
-			tabBarItem.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
-		}
+		let gameGrey = UIImage(imageLiteralResourceName: "gameGrey").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let game = UIImage(imageLiteralResourceName: "game").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let tabBarItemForGame = UITabBarItem(title: nil, image: gameGrey, selectedImage: game.withRenderingMode(.alwaysOriginal))
+		
+		let cardGrey = UIImage(imageLiteralResourceName: "cardGrey").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let card = UIImage(imageLiteralResourceName: "card").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let tabBarItemForCard = UITabBarItem(title: nil, image: cardGrey, selectedImage: card.withRenderingMode(.alwaysOriginal))
+		
+		let profileGrey = UIImage(imageLiteralResourceName: "profileGrey").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let profile = UIImage(imageLiteralResourceName: "profile").resizeImage(targetSize: CGSize(width: 50, height: 50))
+		let tabBarItemForProfile = UITabBarItem(title: nil, image: profileGrey, selectedImage: profile.withRenderingMode(.alwaysOriginal))
+		
+		viewControllers![0].tabBarItem = tabBarItemForGame
+		viewControllers![0].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+		viewControllers![1].tabBarItem = tabBarItemForCard
+		viewControllers![1].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+		viewControllers![3].tabBarItem = tabBarItemForProfile
+		viewControllers![3].tabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
 		
 		// customize tab bar
 		tabBar.tintColor = themeColor
 		tabBar.barTintColor = barTintColor
-		
-		// others
-		delegate = self
 	}
 }
 
-extension TabBarController: UITabBarControllerDelegate {
-	
-	
-}

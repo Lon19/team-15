@@ -27,6 +27,8 @@
 		B936C008236D1A0C008EB833 /* TradeCardsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C007236D1A0C008EB833 /* TradeCardsNavigationController.swift */; };
 		B936C00A236D1C59008EB833 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C009236D1C59008EB833 /* Font.swift */; };
 		B936C00C236D2FAD008EB833 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00B236D2FAD008EB833 /* UIImageExtension.swift */; };
+		B936C00E236D3A5F008EB833 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00D236D3A5F008EB833 /* DummyVC.swift */; };
+		B936C010236D3F7D008EB833 /* ExchangeCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936C00F236D3F7D008EB833 /* ExchangeCardsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		B936C007236D1A0C008EB833 /* TradeCardsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeCardsNavigationController.swift; sourceTree = "<group>"; };
 		B936C009236D1C59008EB833 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		B936C00B236D2FAD008EB833 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		B936C00D236D3A5F008EB833 /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
+		B936C00F236D3F7D008EB833 /* ExchangeCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCardsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 				B936BFBD236CD9E0008EB833 /* SceneDelegate.swift */,
 				B936BFF2236CFC15008EB833 /* TabBarController.swift */,
 				B936C007236D1A0C008EB833 /* TradeCardsNavigationController.swift */,
+				B936C00F236D3F7D008EB833 /* ExchangeCardsVC.swift */,
+				B936C00D236D3A5F008EB833 /* DummyVC.swift */,
 				B936BFF4236CFC1D008EB833 /* TradeCardsVCs */,
 			);
 			path = Controller;
@@ -351,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B936BFF9236CFE4D008EB833 /* TradeCardsTableVC.swift in Sources */,
+				B936C00E236D3A5F008EB833 /* DummyVC.swift in Sources */,
 				B936BFC0236CD9E0008EB833 /* TradeCardsViewController.swift in Sources */,
 				B936C00A236D1C59008EB833 /* Font.swift in Sources */,
 				B936BFBC236CD9E0008EB833 /* AppDelegate.swift in Sources */,
@@ -364,6 +371,7 @@
 				B936BFFD236D0449008EB833 /* TradeCardsTableViewCell.swift in Sources */,
 				B936BFEF236CDCF3008EB833 /* CoreDataManager.swift in Sources */,
 				B936BFBE236CD9E0008EB833 /* SceneDelegate.swift in Sources */,
+				B936C010236D3F7D008EB833 /* ExchangeCardsVC.swift in Sources */,
 				B936C002236D07C2008EB833 /* Button.swift in Sources */,
 				B936C00C236D2FAD008EB833 /* UIImageExtension.swift in Sources */,
 			);

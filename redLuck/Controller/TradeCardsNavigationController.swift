@@ -13,7 +13,7 @@ class TradeCardsNavigationController: UINavigationController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		viewControllers = [TradeCardsViewController()]
+		viewControllers = [ExchangeCardsViewController()]
 		
 		// customize nav bar
 		navigationBar.barTintColor = themeColor
