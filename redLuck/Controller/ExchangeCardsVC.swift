@@ -37,7 +37,7 @@ class ExchangeCardsViewController: UIViewController {
 			NSLayoutConstraint.constraints(withVisualFormat: "|-(gap)-[exchange]-(gap)-|", options: .alignAllBottom, metrics: metricsDic, views: viewsDic),
 			NSLayoutConstraint.constraints(withVisualFormat: "|-(gap)-[activity]-(gap)-|", options: .alignAllBottom, metrics: metricsDic, views: viewsDic),
 			NSLayoutConstraint.constraints(withVisualFormat: "|-(gap)-[gift]-(gap)-|", options: .alignAllBottom, metrics: metricsDic, views: viewsDic),
-			NSLayoutConstraint.constraints(withVisualFormat: "V:|-(gap)-[exchange]-(gap)-[activity]-(gap)-[gift]-(gap)-|", options: .alignAllCenterX, metrics: metricsDic, views: viewsDic)
+			NSLayoutConstraint.constraints(withVisualFormat: "V:|-(gap)-[exchange]-(gap)-[gift]-(gap)-[activity]-(gap)-|", options: .alignAllCenterX, metrics: metricsDic, views: viewsDic)
 			].flatMap{$0})
 		
 	}

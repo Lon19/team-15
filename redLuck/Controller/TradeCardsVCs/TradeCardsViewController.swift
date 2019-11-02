@@ -51,7 +51,7 @@ extension TradeCardsTableViewController {
 		
 		let homeSearchBar = navigationItem.searchController!.searchBar
 		homeSearchBar.placeholder = "Search here"
-		homeSearchBar.tintColor = themeColor
+		homeSearchBar.tintColor = .black
 		
 		// set the search bar field background color to white
 		// but it appears that making it gray is the best can be done?

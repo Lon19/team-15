@@ -48,6 +48,8 @@ extension TradeCardsSearchController {
 		cell.confirmTrading.tag = indexPath.row
 		
 		cell.profileName.text = filteredNames[indexPath.row]
+		cell.profileName.attributedText = NSAttributedString(string: filteredNames[indexPath.row], attributes:
+		[.underlineStyle: NSUnderlineStyle.single.rawValue])
 		cell.cardsCanOffer.text = "Offering: "
 		cell.requestForCards.text = "Requesting: "
 		
@@ -56,11 +58,12 @@ extension TradeCardsSearchController {
 		cell.offeringCards.backgroundColor = UIColor(patternImage: card1)
 		cell.requestingCards.backgroundColor = UIColor(patternImage: card2)
 		
-		cell.confirmTrading.isSelected = true
+		cell.confirmTrading.isSelected = false
 		
 		// highlight the search result
 		let searchItems = tradeCardsVC.navigationItem.searchController!.searchBar.text!.convertAStringToAnArrayOfWords()
-		let attributedListName = NSMutableAttributedString(string: cell.profileName.text!)
+		let attributedProfileName = NSMutableAttributedString(string: cell.profileName.text!, attributes:
+			[.font: UIFont.systemFont(ofSize: FontSize.forTradeCardsInfo, weight: .bold)])
 		
 		for searchItem in searchItems {
 			
@@ -71,11 +74,11 @@ extension TradeCardsSearchController {
 				/// addAttribute works with NSRange instead of Range, thus conversion is necessary
 				for rangeOfTextToHighlight in rangesOfTextToHighlight {
 					let nsRangeOfTextToHighlight = NSRange(rangeOfTextToHighlight, in: profileName)
-					attributedListName.addAttribute(.backgroundColor, value: UIColor.yellow, range: nsRangeOfTextToHighlight)
+					attributedProfileName.addAttribute(.backgroundColor, value: UIColor.yellow, range: nsRangeOfTextToHighlight)
 				}
 			}
 		}
-		cell.profileName.attributedText = attributedListName
+		cell.profileName.attributedText = attributedProfileName
 		
 		return cell
 	}
