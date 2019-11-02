@@ -35,7 +35,7 @@ class _DrawState extends State<Draw> {
           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50.0),
-            color: Colors.yellow
+            color: Colors.greenAccent
           ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
