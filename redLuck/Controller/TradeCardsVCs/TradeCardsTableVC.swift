@@ -25,6 +25,8 @@ extension TradeCardsTableViewController {
 		cell.confirmTrading.tag = indexPath.row
 		
 		cell.profileName.text = names[indexPath.row]
+		cell.profileName.attributedText = NSAttributedString(string: names[indexPath.row], attributes:
+			[.underlineStyle: NSUnderlineStyle.single.rawValue])
 		cell.cardsCanOffer.text = "Offering: "
 		cell.requestForCards.text = "Requesting: "
 		

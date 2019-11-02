@@ -14,7 +14,7 @@ class TradeCardsTableViewCell: UITableViewCell {
 	var offeringCards, requestingCards: UIView!
 	var confirmTrading: Button!
 	
-	var tableVC: TradeCardsTableViewController!
+	weak var tableVC: TradeCardsTableViewController!
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
